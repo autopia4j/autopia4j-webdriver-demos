@@ -1,0 +1,24 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.autopia4j.demo</groupId>
+  <artifactId>mercurytours.keyword</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+
+  <name>mercurytours.keyword</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+  	<dependency>
+  		<groupId>com.autopia4j.framework</groupId>
+  		<artifactId>autopia4j-webdriver</artifactId>
+  		<version>1.0.0</version>
+  	</dependency>
+  </dependencies>
+</project>
