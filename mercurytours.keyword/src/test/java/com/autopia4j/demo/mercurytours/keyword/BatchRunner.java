@@ -2,7 +2,7 @@ package com.autopia4j.demo.mercurytours.keyword;
 
 import com.autopia4j.framework.core.FrameworkParameters;
 import com.autopia4j.framework.core.FrameworkType;
-import com.autopia4j.framework.webdriver.Allocator;
+import com.autopia4j.framework.webdriver.testrunner.Allocator;
 
 /**
  * Class to kick-start the batch execution of test scripts within the framework

@@ -2,17 +2,17 @@ package com.autopia4j.demo.mercurytours.keyword.testscripts.loginScenario;
 
 import org.testng.annotations.Test;
 
-import com.autopia4j.framework.webdriver.Browser;
-import com.autopia4j.framework.webdriver.WebDriverTestParameters;
-import com.autopia4j.framework.webdriver.keyword.KeywordDriverScript;
-import com.autopia4j.framework.webdriver.keyword.TestCase;
+import com.autopia4j.framework.webdriver.core.Browser;
+import com.autopia4j.framework.webdriver.core.WebDriverTestParameters;
+import com.autopia4j.framework.webdriver.impl.keyword.KeywordDriverScript;
+import com.autopia4j.framework.webdriver.impl.keyword.TestScript;
 
 
 /**
  * Test for login with newly registered user
  * @author vj
  */
-public class TestForLoginWithNewlyRegisteredUser extends TestCase {
+public class TestForLoginWithNewlyRegisteredUser extends TestScript {
 	
 	@Test
 	public void testRunner() {

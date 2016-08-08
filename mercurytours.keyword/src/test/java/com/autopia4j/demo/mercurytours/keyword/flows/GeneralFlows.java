@@ -1,8 +1,8 @@
 package com.autopia4j.demo.mercurytours.keyword.flows;
 
 import com.autopia4j.framework.reporting.Status;
-import com.autopia4j.framework.webdriver.ReusableLibrary;
-import com.autopia4j.framework.webdriver.ScriptHelper;
+import com.autopia4j.framework.webdriver.core.ReusableLibrary;
+import com.autopia4j.framework.webdriver.core.ScriptHelper;
 
 
 /**

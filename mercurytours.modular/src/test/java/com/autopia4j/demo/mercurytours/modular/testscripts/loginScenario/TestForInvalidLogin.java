@@ -7,16 +7,16 @@ import com.autopia4j.demo.mercurytours.modular.pages.SignOnPage;
 import com.autopia4j.demo.mercurytours.modular.testscripts.TestConfigurations;
 import com.autopia4j.framework.core.IterationOptions;
 import com.autopia4j.framework.reporting.Status;
-import com.autopia4j.framework.webdriver.Browser;
-import com.autopia4j.framework.webdriver.ExecutionMode;
-import com.autopia4j.framework.webdriver.modular.TestCase;
+import com.autopia4j.framework.webdriver.core.Browser;
+import com.autopia4j.framework.webdriver.core.ExecutionMode;
+import com.autopia4j.framework.webdriver.impl.modular.TestScript;
 
 
 /**
  * Test for login with invalid user credentials
  * @author vj
  */
-public class TestForInvalidLogin extends TestCase {
+public class TestForInvalidLogin extends TestScript {
 	private SignOnPage signOnPage;
 	
 	@Test(dataProvider="DesktopBrowsers", dataProviderClass=TestConfigurations.class)

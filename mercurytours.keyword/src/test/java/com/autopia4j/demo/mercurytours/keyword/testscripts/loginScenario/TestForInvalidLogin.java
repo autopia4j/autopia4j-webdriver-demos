@@ -4,18 +4,18 @@ import org.testng.annotations.Test;
 
 import com.autopia4j.demo.mercurytours.keyword.testscripts.TestConfigurations;
 import com.autopia4j.framework.core.IterationOptions;
-import com.autopia4j.framework.webdriver.Browser;
-import com.autopia4j.framework.webdriver.ExecutionMode;
-import com.autopia4j.framework.webdriver.WebDriverTestParameters;
-import com.autopia4j.framework.webdriver.keyword.KeywordDriverScript;
-import com.autopia4j.framework.webdriver.keyword.TestCase;
+import com.autopia4j.framework.webdriver.core.Browser;
+import com.autopia4j.framework.webdriver.core.ExecutionMode;
+import com.autopia4j.framework.webdriver.core.WebDriverTestParameters;
+import com.autopia4j.framework.webdriver.impl.keyword.KeywordDriverScript;
+import com.autopia4j.framework.webdriver.impl.keyword.TestScript;
 
 
 /**
  * Test for login with invalid user credentials
  * @author vj
  */
-public class TestForInvalidLogin extends TestCase {
+public class TestForInvalidLogin extends TestScript {
 	
 	@Test(dataProvider="DesktopBrowsers", dataProviderClass=TestConfigurations.class)
 	public void testRunner(String testInstance, ExecutionMode executionMode,

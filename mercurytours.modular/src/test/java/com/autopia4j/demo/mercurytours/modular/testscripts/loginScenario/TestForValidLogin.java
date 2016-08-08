@@ -5,14 +5,14 @@ import org.testng.annotations.Test;
 import com.autopia4j.demo.mercurytours.modular.flows.GeneralFlows;
 import com.autopia4j.demo.mercurytours.modular.pages.FlightFinderPage;
 import com.autopia4j.demo.mercurytours.modular.pages.SignOnPage;
-import com.autopia4j.framework.webdriver.modular.TestCase;
+import com.autopia4j.framework.webdriver.impl.modular.TestScript;
 
 
 /**
  * Test for login with valid user credentials
  * @author vj
  */
-public class TestForValidLogin extends TestCase {
+public class TestForValidLogin extends TestScript {
 	
 	private GeneralFlows generalFlows;
 	private SignOnPage signOnPage;

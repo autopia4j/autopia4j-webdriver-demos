@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import com.autopia4j.framework.reporting.Status;
-import com.autopia4j.framework.webdriver.ScriptHelper;
+import com.autopia4j.framework.webdriver.core.ScriptHelper;
 
 
 /**

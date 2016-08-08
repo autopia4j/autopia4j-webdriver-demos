@@ -3,8 +3,8 @@ package com.autopia4j.demo.mercurytours.modular.testscripts;
 import org.openqa.selenium.Platform;
 import org.testng.annotations.DataProvider;
 
-import com.autopia4j.framework.webdriver.Browser;
-import com.autopia4j.framework.webdriver.ExecutionMode;
+import com.autopia4j.framework.webdriver.core.Browser;
+import com.autopia4j.framework.webdriver.core.ExecutionMode;
 
 public class TestConfigurations {
 	

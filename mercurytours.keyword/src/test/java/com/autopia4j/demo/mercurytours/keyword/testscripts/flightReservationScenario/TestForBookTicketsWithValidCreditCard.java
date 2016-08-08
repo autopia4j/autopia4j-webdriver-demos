@@ -5,18 +5,18 @@ import org.testng.annotations.Test;
 
 import com.autopia4j.demo.mercurytours.keyword.testscripts.TestConfigurations;
 import com.autopia4j.framework.core.IterationOptions;
-import com.autopia4j.framework.webdriver.Browser;
-import com.autopia4j.framework.webdriver.ExecutionMode;
-import com.autopia4j.framework.webdriver.WebDriverTestParameters;
-import com.autopia4j.framework.webdriver.keyword.KeywordDriverScript;
-import com.autopia4j.framework.webdriver.keyword.TestCase;
+import com.autopia4j.framework.webdriver.core.Browser;
+import com.autopia4j.framework.webdriver.core.ExecutionMode;
+import com.autopia4j.framework.webdriver.core.WebDriverTestParameters;
+import com.autopia4j.framework.webdriver.impl.keyword.KeywordDriverScript;
+import com.autopia4j.framework.webdriver.impl.keyword.TestScript;
 
 
 /**
  * Test for book flight tickets and verify booking
  * @author vj
  */
-public class TestForBookTicketsWithValidCreditCard extends TestCase {
+public class TestForBookTicketsWithValidCreditCard extends TestScript {
 	
 	@Test(dataProvider="DesktopBrowsers", dataProviderClass=TestConfigurations.class)
 	public void testRunner(String testInstance, ExecutionMode executionMode,

@@ -9,15 +9,15 @@ import com.autopia4j.demo.mercurytours.modular.pages.UserRegistrationConfirmatio
 import com.autopia4j.demo.mercurytours.modular.pages.UserRegistrationPage;
 import com.autopia4j.framework.reporting.Status;
 import com.autopia4j.framework.utils.FrameworkException;
-import com.autopia4j.framework.webdriver.Browser;
-import com.autopia4j.framework.webdriver.modular.TestCase;
+import com.autopia4j.framework.webdriver.core.Browser;
+import com.autopia4j.framework.webdriver.impl.modular.TestScript;
 
 
 /**
  * Test for login with newly registered user
  * @author vj
  */
-public class TestForLoginWithNewlyRegisteredUser extends TestCase {
+public class TestForLoginWithNewlyRegisteredUser extends TestScript {
 	private GeneralFlows generalFlows;
 	private SignOnPage signOnPage;
 	

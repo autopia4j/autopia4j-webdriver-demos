@@ -10,16 +10,16 @@ import com.autopia4j.demo.mercurytours.modular.pages.SignOnPage;
 import com.autopia4j.demo.mercurytours.modular.testscripts.TestConfigurations;
 import com.autopia4j.framework.core.IterationOptions;
 import com.autopia4j.framework.reporting.Status;
-import com.autopia4j.framework.webdriver.Browser;
-import com.autopia4j.framework.webdriver.ExecutionMode;
-import com.autopia4j.framework.webdriver.modular.TestCase;
+import com.autopia4j.framework.webdriver.core.Browser;
+import com.autopia4j.framework.webdriver.core.ExecutionMode;
+import com.autopia4j.framework.webdriver.impl.modular.TestScript;
 
 
 /**
  * Test for book flight tickets and verify booking
  * @author vj
  */
-public class TestForBookTicketsWithValidCreditCard extends TestCase {
+public class TestForBookTicketsWithValidCreditCard extends TestScript {
 	private FlightFinderPage flightFinderPage;
 	
 	@Test(dataProvider="DesktopBrowsers", dataProviderClass=TestConfigurations.class)
