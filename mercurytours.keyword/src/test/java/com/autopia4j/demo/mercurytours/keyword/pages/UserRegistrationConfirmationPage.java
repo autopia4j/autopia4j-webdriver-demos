@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 
 import com.autopia4j.framework.reporting.Status;
 import com.autopia4j.framework.utils.FrameworkException;
+import com.autopia4j.framework.webdriver.core.ReusableLibrary;
 import com.autopia4j.framework.webdriver.core.ScriptHelper;
 
 
@@ -11,20 +12,16 @@ import com.autopia4j.framework.webdriver.core.ScriptHelper;
  * UserRegistrationConfirmationPage class
  * @author vj
  */
-public class UserRegistrationConfirmationPage extends MasterPage {
+public class UserRegistrationConfirmationPage extends ReusableLibrary {
 	// UI Map object definitions
 	
 	// Links
 	private final By lnkSignIn = By.linkText("sign-in");
 	
-	/**
-	 * Constructor to initialize the page
-	 * @param scriptHelper The {@link ScriptHelper} object passed from the {@link KeywordDriverScript}
-	 */
+	
 	public UserRegistrationConfirmationPage(ScriptHelper scriptHelper) {
 		super(scriptHelper);
 	}
-	
 	
 	public void verifyRegistration() {
 		String userName = dataTable.getData("General_Data", "Username");

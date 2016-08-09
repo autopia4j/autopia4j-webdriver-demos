@@ -3,6 +3,7 @@ package com.autopia4j.demo.mercurytours.keyword.pages;
 import org.openqa.selenium.By;
 
 import com.autopia4j.framework.reporting.Status;
+import com.autopia4j.framework.webdriver.core.ReusableLibrary;
 import com.autopia4j.framework.webdriver.core.ScriptHelper;
 
 
@@ -10,7 +11,7 @@ import com.autopia4j.framework.webdriver.core.ScriptHelper;
  * BookFlightPage class
  * @author vj
  */
-public class BookFlightPage extends MasterPage {
+public class BookFlightPage extends ReusableLibrary {
 	private static final String PASSENGER_DATA = "Passenger_Data";
 	
 	// UI Map object definitions
@@ -26,10 +27,7 @@ public class BookFlightPage extends MasterPage {
 	// Buttons
 	private final By btnSecurePurchase = By.name("buyFlights");
 	
-	/**
-	 * Constructor to initialize the component library
-	 * @param scriptHelper The {@link ScriptHelper} object passed from the {@link KeywordDriverScript}
-	 */
+	
 	public BookFlightPage(ScriptHelper scriptHelper) {
 		super(scriptHelper);
 	}

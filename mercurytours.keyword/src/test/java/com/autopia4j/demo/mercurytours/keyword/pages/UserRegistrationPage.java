@@ -3,6 +3,7 @@ package com.autopia4j.demo.mercurytours.keyword.pages;
 import org.openqa.selenium.By;
 
 import com.autopia4j.framework.reporting.Status;
+import com.autopia4j.framework.webdriver.core.ReusableLibrary;
 import com.autopia4j.framework.webdriver.core.ScriptHelper;
 
 
@@ -10,7 +11,7 @@ import com.autopia4j.framework.webdriver.core.ScriptHelper;
  * UserRegistrationPage class
  * @author vj
  */
-public class UserRegistrationPage extends MasterPage {
+public class UserRegistrationPage extends ReusableLibrary {
 	private static final String GENERAL_DATA = "General_Data";
 	private static final String REGISTER_USER_DATA = "RegisterUser_Data";
 	
@@ -33,14 +34,9 @@ public class UserRegistrationPage extends MasterPage {
 	private final By btnRegister = By.name("register");
 	
 	
-	/**
-	 * Constructor to initialize the page
-	 * @param scriptHelper The {@link ScriptHelper} object passed from the {@link KeywordDriverScript}
-	 */
 	public UserRegistrationPage(ScriptHelper scriptHelper) {
 		super(scriptHelper);
 	}
-	
 	
 	public void registerUser() {
 		report.updateTestLog("Enter user details", "Enter new user details for registration", Status.DONE);

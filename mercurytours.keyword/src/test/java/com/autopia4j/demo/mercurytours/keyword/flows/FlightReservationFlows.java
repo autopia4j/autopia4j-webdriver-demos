@@ -9,14 +9,11 @@ import com.autopia4j.framework.webdriver.core.ScriptHelper;
 
 
 /**
- * Class for storing component groups related to the flight reservation functionality
+ * Class for storing test flows related to the flight reservation functionality
  * @author vj
  */
 public class FlightReservationFlows extends ReusableLibrary {
-	/**
-	 * Constructor to initialize the component group library
-	 * @param scriptHelper The {@link ScriptHelper} object passed from the {@link KeywordDriverScript}
-	 */
+	
 	public FlightReservationFlows(ScriptHelper scriptHelper) {
 		super(scriptHelper);
 	}

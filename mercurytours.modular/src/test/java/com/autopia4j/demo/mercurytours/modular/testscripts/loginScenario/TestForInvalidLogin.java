@@ -9,14 +9,14 @@ import com.autopia4j.framework.core.IterationOptions;
 import com.autopia4j.framework.reporting.Status;
 import com.autopia4j.framework.webdriver.core.Browser;
 import com.autopia4j.framework.webdriver.core.ExecutionMode;
-import com.autopia4j.framework.webdriver.impl.modular.TestScript;
+import com.autopia4j.framework.webdriver.impl.modular.ModularTestScript;
 
 
 /**
  * Test for login with invalid user credentials
  * @author vj
  */
-public class TestForInvalidLogin extends TestScript {
+public class TestForInvalidLogin extends ModularTestScript {
 	private SignOnPage signOnPage;
 	
 	@Test(dataProvider="DesktopBrowsers", dataProviderClass=TestConfigurations.class)

@@ -12,14 +12,14 @@ import com.autopia4j.framework.core.IterationOptions;
 import com.autopia4j.framework.reporting.Status;
 import com.autopia4j.framework.webdriver.core.Browser;
 import com.autopia4j.framework.webdriver.core.ExecutionMode;
-import com.autopia4j.framework.webdriver.impl.modular.TestScript;
+import com.autopia4j.framework.webdriver.impl.modular.ModularTestScript;
 
 
 /**
  * Test for book flight tickets and verify booking
  * @author vj
  */
-public class TestForBookTicketsWithValidCreditCard extends TestScript {
+public class TestForBookTicketsWithValidCreditCard extends ModularTestScript {
 	private FlightFinderPage flightFinderPage;
 	
 	@Test(dataProvider="DesktopBrowsers", dataProviderClass=TestConfigurations.class)

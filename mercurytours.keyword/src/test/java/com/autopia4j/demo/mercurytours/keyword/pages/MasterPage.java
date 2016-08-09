@@ -19,10 +19,6 @@ public class MasterPage extends ReusableLibrary {
 	private final By lnkRegister = By.linkText("REGISTER");
 	
 	
-	/**
-	 * Constructor to initialize the functional library
-	 * @param scriptHelper The {@link ScriptHelper} object passed from the {@link KeywordDriverScript}
-	 */
 	public MasterPage(ScriptHelper scriptHelper) {
 		super(scriptHelper);
 	}
@@ -31,6 +27,11 @@ public class MasterPage extends ReusableLibrary {
 	public void clickRegister() {
 		report.updateTestLog("Click Register", "Click on the REGISTER link", Status.DONE);
 		driver.findElement(lnkRegister).click();
+	}
+	
+	public Boolean isUserSignedOn() {
+		return driverUtil.objectExists(lnkSignOff) &&
+				driver.findElement(lnkSignOff).isDisplayed();
 	}
 	
 	public void logout() {

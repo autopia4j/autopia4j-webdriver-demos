@@ -9,14 +9,14 @@ import com.autopia4j.framework.webdriver.core.Browser;
 import com.autopia4j.framework.webdriver.core.ExecutionMode;
 import com.autopia4j.framework.webdriver.core.WebDriverTestParameters;
 import com.autopia4j.framework.webdriver.impl.keyword.KeywordDriverScript;
-import com.autopia4j.framework.webdriver.impl.keyword.TestScript;
+import com.autopia4j.framework.webdriver.impl.keyword.KeywordTestScript;
 
 
 /**
  * Test for book flight tickets and verify booking
  * @author vj
  */
-public class TestForBookTicketsWithValidCreditCard extends TestScript {
+public class TestForBookTicketsWithValidCreditCard extends KeywordTestScript {
 	
 	@Test(dataProvider="DesktopBrowsers", dataProviderClass=TestConfigurations.class)
 	public void testRunner(String testInstance, ExecutionMode executionMode,

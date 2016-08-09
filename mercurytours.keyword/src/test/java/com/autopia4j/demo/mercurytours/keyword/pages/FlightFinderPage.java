@@ -3,6 +3,7 @@ package com.autopia4j.demo.mercurytours.keyword.pages;
 import org.openqa.selenium.By;
 
 import com.autopia4j.framework.reporting.Status;
+import com.autopia4j.framework.webdriver.core.ReusableLibrary;
 import com.autopia4j.framework.webdriver.core.ScriptHelper;
 
 
@@ -10,7 +11,7 @@ import com.autopia4j.framework.webdriver.core.ScriptHelper;
  * FlightFinderPage class
  * @author vj
  */
-public class FlightFinderPage extends MasterPage {
+public class FlightFinderPage extends ReusableLibrary {
 	private static final String FLIGHTS_DATA = "Flights_Data";
 	private static final String PASSENGER_DATA = "Passenger_Data";
 	
@@ -30,10 +31,6 @@ public class FlightFinderPage extends MasterPage {
 	private final By btnContinue = By.name("findFlights");
 	
 	
-	/**
-	 * Constructor to initialize the page
-	 * @param scriptHelper The {@link ScriptHelper} object passed from the {@link KeywordDriverScript}
-	 */
 	public FlightFinderPage(ScriptHelper scriptHelper) {
 		super(scriptHelper);
 	}

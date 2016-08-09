@@ -8,14 +8,14 @@ import com.autopia4j.framework.webdriver.core.Browser;
 import com.autopia4j.framework.webdriver.core.ExecutionMode;
 import com.autopia4j.framework.webdriver.core.WebDriverTestParameters;
 import com.autopia4j.framework.webdriver.impl.keyword.KeywordDriverScript;
-import com.autopia4j.framework.webdriver.impl.keyword.TestScript;
+import com.autopia4j.framework.webdriver.impl.keyword.KeywordTestScript;
 
 
 /**
  * Test for login with invalid user credentials
  * @author vj
  */
-public class TestForInvalidLogin extends TestScript {
+public class TestForInvalidLogin extends KeywordTestScript {
 	
 	@Test(dataProvider="DesktopBrowsers", dataProviderClass=TestConfigurations.class)
 	public void testRunner(String testInstance, ExecutionMode executionMode,

@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import com.autopia4j.framework.reporting.Status;
+import com.autopia4j.framework.webdriver.core.ReusableLibrary;
 import com.autopia4j.framework.webdriver.core.ScriptHelper;
 
 
@@ -11,7 +12,7 @@ import com.autopia4j.framework.webdriver.core.ScriptHelper;
  * FlightConfirmationPage class
  * @author vj
  */
-public class FlightConfirmationPage extends MasterPage {
+public class FlightConfirmationPage extends ReusableLibrary {
 	// UI Map object definitions
 	
 	// Labels
@@ -23,14 +24,9 @@ public class FlightConfirmationPage extends MasterPage {
 	private final By imgFlights = By.xpath("//a/img");
 	
 	
-	/**
-	 * Constructor to initialize the component library
-	 * @param scriptHelper The {@link ScriptHelper} object passed from the {@link KeywordDriverScript}
-	 */
 	public FlightConfirmationPage(ScriptHelper scriptHelper) {
 		super(scriptHelper);
 	}
-	
 	
 	public void verifyBooking() {
 		if(driverUtil.isTextPresent("^[\\s\\S]*Your itinerary has been booked![\\s\\S]*$")) {
