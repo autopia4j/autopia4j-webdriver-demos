@@ -14,8 +14,9 @@ public class BatchRunner {
 	 * The entry point of the test batch execution <br>
 	 * Exits with a value of 0 if the test passes and 1 if the test fails
 	 * @param args Command line arguments to the Allocator (Not applicable)
+	 * @throws InterruptedException Exception thrown in case of issues waiting for the parallel executor to terminate
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		FrameworkParameters frameworkParameters = FrameworkParameters.getInstance();
 		frameworkParameters.setFrameworkType(FrameworkType.KEYWORD_DRIVEN);
 		frameworkParameters.setBasePackageName(BatchRunner.class.getPackage().getName());
