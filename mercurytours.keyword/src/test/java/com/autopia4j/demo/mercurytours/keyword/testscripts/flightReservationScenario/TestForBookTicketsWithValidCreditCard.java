@@ -22,7 +22,7 @@ public class TestForBookTicketsWithValidCreditCard extends KeywordTestScript {
 	public void testRunner(String testInstance, ExecutionMode executionMode,
 							String deviceName, Browser browser, Platform platform) {
 		WebDriverTestParameters testParameters =
-					new WebDriverTestParameters(currentModule, currentTestcase);
+					new WebDriverTestParameters(currentModule, currentTest);
 		testParameters.setCurrentTestDescription("Test for book flight tickets and verify booking");
 		testParameters.setIterationMode(IterationOptions.RUN_ONE_ITERATION_ONLY);
 		
@@ -34,7 +34,6 @@ public class TestForBookTicketsWithValidCreditCard extends KeywordTestScript {
 		
 		KeywordDriverScript driverScript = new KeywordDriverScript(testParameters);
 		driverScript.driveTestExecution();
-		
-		tearDownTestRunner(testParameters, driverScript);
+		assertTestPassed(driverScript);
 	}
 }

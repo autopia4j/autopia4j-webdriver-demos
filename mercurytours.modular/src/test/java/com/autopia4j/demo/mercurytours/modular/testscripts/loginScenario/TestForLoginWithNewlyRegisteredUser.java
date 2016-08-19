@@ -10,6 +10,8 @@ import com.autopia4j.demo.mercurytours.modular.pages.UserRegistrationPage;
 import com.autopia4j.framework.reporting.Status;
 import com.autopia4j.framework.utils.FrameworkException;
 import com.autopia4j.framework.webdriver.core.Browser;
+import com.autopia4j.framework.webdriver.core.WebDriverTestParameters;
+import com.autopia4j.framework.webdriver.impl.modular.ModularDriverScript;
 import com.autopia4j.framework.webdriver.impl.modular.ModularTestScript;
 
 
@@ -23,10 +25,14 @@ public class TestForLoginWithNewlyRegisteredUser extends ModularTestScript {
 	
 	@Test
 	public void testRunner() {
+		WebDriverTestParameters testParameters =
+									new WebDriverTestParameters(currentModule, currentTest);
 		testParameters.setCurrentTestDescription("Test for login with newly registered user");
 		testParameters.setBrowser(Browser.CHROME);
 		
+		ModularDriverScript driverScript = new ModularDriverScript(testParameters);
 		driverScript.driveTestExecution();
+		assertTestPassed(driverScript);
 	}
 	
 	@Override

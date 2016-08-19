@@ -1,5 +1,6 @@
 package com.autopia4j.demo.mercurytours.modular.testscripts.loginScenario;
 
+import org.openqa.selenium.Platform;
 import org.testng.annotations.Test;
 
 import com.autopia4j.demo.mercurytours.modular.flows.GeneralFlows;
@@ -9,6 +10,8 @@ import com.autopia4j.framework.core.IterationOptions;
 import com.autopia4j.framework.reporting.Status;
 import com.autopia4j.framework.webdriver.core.Browser;
 import com.autopia4j.framework.webdriver.core.ExecutionMode;
+import com.autopia4j.framework.webdriver.core.WebDriverTestParameters;
+import com.autopia4j.framework.webdriver.impl.modular.ModularDriverScript;
 import com.autopia4j.framework.webdriver.impl.modular.ModularTestScript;
 
 
@@ -21,17 +24,21 @@ public class TestForInvalidLogin extends ModularTestScript {
 	
 	@Test(dataProvider="DesktopBrowsers", dataProviderClass=TestConfigurations.class)
 	public void testRunner(String testInstance, ExecutionMode executionMode,
-				String deviceName, Browser browser, int startIteration, int endIteration) {
+							String deviceName, Browser browser, Platform platform) {
+		WebDriverTestParameters testParameters =
+									new WebDriverTestParameters(currentModule, currentTest);
 		testParameters.setCurrentTestDescription("Test for login with invalid user credentials");
+		testParameters.setIterationMode(IterationOptions.RUN_ONE_ITERATION_ONLY);
+		
 		testParameters.setCurrentTestInstance(testInstance);
 		testParameters.setExecutionMode(executionMode);
 		testParameters.setDeviceName(deviceName);
 		testParameters.setBrowser(browser);
-		testParameters.setIterationMode(IterationOptions.RUN_RANGE_OF_ITERATIONS);
-		testParameters.setStartIteration(startIteration);
-		testParameters.setEndIteration(endIteration);
+		testParameters.setPlatform(platform);
 		
+		ModularDriverScript driverScript = new ModularDriverScript(testParameters);
 		driverScript.driveTestExecution();
+		assertTestPassed(driverScript);
 	}
 	
 	@Override

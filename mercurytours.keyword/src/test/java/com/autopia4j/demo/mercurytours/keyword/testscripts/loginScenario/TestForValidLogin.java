@@ -16,12 +16,11 @@ public class TestForValidLogin extends KeywordTestScript {
 	@Test
 	public void testRunner() {
 		WebDriverTestParameters testParameters =
-				new WebDriverTestParameters(currentModule, currentTestcase);
+				new WebDriverTestParameters(currentModule, currentTest);
 		testParameters.setCurrentTestDescription("Test for login with valid user credentials");
 		
 		KeywordDriverScript driverScript = new KeywordDriverScript(testParameters);
 		driverScript.driveTestExecution();
-		
-		tearDownTestRunner(testParameters, driverScript);
+		assertTestPassed(driverScript);
 	}
 }

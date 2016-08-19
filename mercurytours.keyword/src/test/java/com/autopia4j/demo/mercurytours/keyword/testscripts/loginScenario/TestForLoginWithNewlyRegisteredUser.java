@@ -17,13 +17,12 @@ public class TestForLoginWithNewlyRegisteredUser extends KeywordTestScript {
 	@Test
 	public void testRunner() {
 		WebDriverTestParameters testParameters =
-					new WebDriverTestParameters(currentModule, currentTestcase);
+					new WebDriverTestParameters(currentModule, currentTest);
 		testParameters.setCurrentTestDescription("Test for login with newly registered user");
 		testParameters.setBrowser(Browser.CHROME);
 		
 		KeywordDriverScript driverScript = new KeywordDriverScript(testParameters);
 		driverScript.driveTestExecution();
-		
-		tearDownTestRunner(testParameters, driverScript);
+		assertTestPassed(driverScript);
 	}
 }

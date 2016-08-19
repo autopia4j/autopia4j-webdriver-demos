@@ -12,6 +12,8 @@ import com.autopia4j.framework.core.IterationOptions;
 import com.autopia4j.framework.reporting.Status;
 import com.autopia4j.framework.webdriver.core.Browser;
 import com.autopia4j.framework.webdriver.core.ExecutionMode;
+import com.autopia4j.framework.webdriver.core.WebDriverTestParameters;
+import com.autopia4j.framework.webdriver.impl.modular.ModularDriverScript;
 import com.autopia4j.framework.webdriver.impl.modular.ModularTestScript;
 
 
@@ -25,6 +27,8 @@ public class TestForBookTicketsWithValidCreditCard extends ModularTestScript {
 	@Test(dataProvider="DesktopBrowsers", dataProviderClass=TestConfigurations.class)
 	public void testRunner(String testInstance, ExecutionMode executionMode,
 							String deviceName, Browser browser, Platform platform) {
+		WebDriverTestParameters testParameters =
+									new WebDriverTestParameters(currentModule, currentTest);
 		testParameters.setCurrentTestDescription("Test for book flight tickets and verify booking");
 		testParameters.setIterationMode(IterationOptions.RUN_ONE_ITERATION_ONLY);
 		
@@ -34,7 +38,9 @@ public class TestForBookTicketsWithValidCreditCard extends ModularTestScript {
 		testParameters.setBrowser(browser);
 		testParameters.setPlatform(platform);
 		
+		ModularDriverScript driverScript = new ModularDriverScript(testParameters);
 		driverScript.driveTestExecution();
+		assertTestPassed(driverScript);
 	}
 	
 	@Override

@@ -5,6 +5,8 @@ import org.testng.annotations.Test;
 import com.autopia4j.demo.mercurytours.modular.flows.GeneralFlows;
 import com.autopia4j.demo.mercurytours.modular.pages.FlightFinderPage;
 import com.autopia4j.demo.mercurytours.modular.pages.SignOnPage;
+import com.autopia4j.framework.webdriver.core.WebDriverTestParameters;
+import com.autopia4j.framework.webdriver.impl.modular.ModularDriverScript;
 import com.autopia4j.framework.webdriver.impl.modular.ModularTestScript;
 
 
@@ -19,9 +21,13 @@ public class TestForValidLogin extends ModularTestScript {
 	
 	@Test()
 	public void testRunner() {
+		WebDriverTestParameters testParameters =
+									new WebDriverTestParameters(currentModule, currentTest);
 		testParameters.setCurrentTestDescription("Test for login with valid user credentials");
 		
+		ModularDriverScript driverScript = new ModularDriverScript(testParameters);
 		driverScript.driveTestExecution();
+		assertTestPassed(driverScript);
 	}
 	
 	@Override

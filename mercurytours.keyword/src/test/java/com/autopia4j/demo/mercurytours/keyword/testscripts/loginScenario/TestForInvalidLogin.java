@@ -1,5 +1,6 @@
 package com.autopia4j.demo.mercurytours.keyword.testscripts.loginScenario;
 
+import org.openqa.selenium.Platform;
 import org.testng.annotations.Test;
 
 import com.autopia4j.demo.mercurytours.keyword.testscripts.TestConfigurations;
@@ -19,21 +20,20 @@ public class TestForInvalidLogin extends KeywordTestScript {
 	
 	@Test(dataProvider="DesktopBrowsers", dataProviderClass=TestConfigurations.class)
 	public void testRunner(String testInstance, ExecutionMode executionMode,
-				String deviceName, Browser browser, int startIteration, int endIteration) {
+							String deviceName, Browser browser, Platform platform) {
 		WebDriverTestParameters testParameters =
-						new WebDriverTestParameters(currentModule, currentTestcase);
+						new WebDriverTestParameters(currentModule, currentTest);
 		testParameters.setCurrentTestDescription("Test for login with invalid user credentials");
+		testParameters.setIterationMode(IterationOptions.RUN_ONE_ITERATION_ONLY);
+		
 		testParameters.setCurrentTestInstance(testInstance);
 		testParameters.setExecutionMode(executionMode);
 		testParameters.setDeviceName(deviceName);
 		testParameters.setBrowser(browser);
-		testParameters.setIterationMode(IterationOptions.RUN_RANGE_OF_ITERATIONS);
-		testParameters.setStartIteration(startIteration);
-		testParameters.setEndIteration(endIteration);
+		testParameters.setPlatform(platform);
 		
 		KeywordDriverScript driverScript = new KeywordDriverScript(testParameters);
 		driverScript.driveTestExecution();
-		
-		tearDownTestRunner(testParameters, driverScript);
+		assertTestPassed(driverScript);
 	}
 }
