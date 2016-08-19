@@ -2,8 +2,8 @@ package com.autopia4j.demo.mercurytours.keyword.pages;
 
 import org.openqa.selenium.By;
 
+import com.autopia4j.framework.core.AutopiaException;
 import com.autopia4j.framework.reporting.Status;
-import com.autopia4j.framework.utils.FrameworkException;
 import com.autopia4j.framework.webdriver.core.ReusableLibrary;
 import com.autopia4j.framework.webdriver.core.ScriptHelper;
 
@@ -32,7 +32,7 @@ public class UserRegistrationConfirmationPage extends ReusableLibrary {
 			report.updateTestLog("Verify Registration",
 										"User " + userName + " registered successfully", Status.PASS);
 		} else {
-			throw new FrameworkException("Verify Registration",
+			throw new AutopiaException("Verify Registration",
 											"User " + userName + " registration failed");
 		}
 	}

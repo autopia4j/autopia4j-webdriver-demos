@@ -2,8 +2,8 @@ package com.autopia4j.demo.mercurytours.modular.flows;
 
 import com.autopia4j.demo.mercurytours.modular.pages.FlightFinderPage;
 import com.autopia4j.demo.mercurytours.modular.pages.SignOnPage;
+import com.autopia4j.framework.core.AutopiaException;
 import com.autopia4j.framework.reporting.Status;
-import com.autopia4j.framework.utils.FrameworkException;
 import com.autopia4j.framework.webdriver.core.ReusableLibrary;
 import com.autopia4j.framework.webdriver.core.ScriptHelper;
 
@@ -35,7 +35,7 @@ public class GeneralFlows extends ReusableLibrary {
 			report.updateTestLog("Verify Login", "Login succeeded for valid user", Status.PASS, true);
 		} else {
 			frameworkParameters.setStopExecution(true);
-			throw new FrameworkException("Verify Login", "Login failed for valid user");
+			throw new AutopiaException("Verify Login", "Login failed for valid user");
 		}
 	}
 }

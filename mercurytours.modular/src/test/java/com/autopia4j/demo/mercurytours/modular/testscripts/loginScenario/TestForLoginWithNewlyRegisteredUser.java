@@ -7,8 +7,8 @@ import com.autopia4j.demo.mercurytours.modular.pages.FlightFinderPage;
 import com.autopia4j.demo.mercurytours.modular.pages.SignOnPage;
 import com.autopia4j.demo.mercurytours.modular.pages.UserRegistrationConfirmationPage;
 import com.autopia4j.demo.mercurytours.modular.pages.UserRegistrationPage;
+import com.autopia4j.framework.core.AutopiaException;
 import com.autopia4j.framework.reporting.Status;
-import com.autopia4j.framework.utils.FrameworkException;
 import com.autopia4j.framework.webdriver.core.Browser;
 import com.autopia4j.framework.webdriver.core.WebDriverTestParameters;
 import com.autopia4j.framework.webdriver.impl.modular.ModularDriverScript;
@@ -63,7 +63,7 @@ public class TestForLoginWithNewlyRegisteredUser extends ModularTestScript {
 			report.updateTestLog("Verify Registration",
 									"User " + userName + " registered successfully", Status.PASS, true);
 		} else {
-			throw new FrameworkException("Verify Registration",
+			throw new AutopiaException("Verify Registration",
 											"User " + userName + " registration failed");
 		}
 	}
