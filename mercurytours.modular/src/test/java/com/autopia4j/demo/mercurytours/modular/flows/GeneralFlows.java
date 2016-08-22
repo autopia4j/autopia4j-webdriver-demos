@@ -23,9 +23,9 @@ public class GeneralFlows extends ReusableLibrary {
 	
 	public SignOnPage invokeApplication() {
 		report.updateTestLog("Invoke Application", "Invoke the application under test @ " +
-									properties.getProperty("ApplicationUrl"), Status.DONE);
+									properties.getProperty("application.url"), Status.DONE);
 		
-		driver.get(properties.getProperty("ApplicationUrl"));
+		driver.get(properties.getProperty("application.url"));
 		
 		return new SignOnPage(scriptHelper);
 	}
