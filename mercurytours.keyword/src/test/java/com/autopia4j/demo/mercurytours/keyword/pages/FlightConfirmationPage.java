@@ -30,7 +30,7 @@ public class FlightConfirmationPage extends ReusableLibrary {
 	
 	public void verifyBooking() {
 		if(driverUtil.isTextPresent("^[\\s\\S]*Your itinerary has been booked![\\s\\S]*$")) {
-			report.updateTestLog("Verify Booking", "Tickets booked successfully", Status.PASS);
+			report.updateTestLog("Verify Booking", "Tickets booked successfully", Status.PASS, true);
 			
 			WebElement flightConfirmation = driver.findElement(lblConfirmationMessage);
 			
@@ -38,10 +38,10 @@ public class FlightConfirmationPage extends ReusableLibrary {
 			flightConfirmationNumber = flightConfirmationNumber.split("#")[1].trim();
 			dataTable.putData("Flights_Data", "FlightConfirmationNumber", flightConfirmationNumber);
 			report.updateTestLog("Flight Confirmation",
-					"The flight confirmation number is " + flightConfirmationNumber,
-					Status.DONE, true);
+									"The flight confirmation number is " + flightConfirmationNumber,
+									Status.DONE);
 		} else {
-			report.updateTestLog("Verify Booking", "Tickets booking failed", Status.FAIL);
+			report.updateTestLog("Verify Booking", "Tickets booking failed", Status.FAIL, true);
 		}
 	}
 	

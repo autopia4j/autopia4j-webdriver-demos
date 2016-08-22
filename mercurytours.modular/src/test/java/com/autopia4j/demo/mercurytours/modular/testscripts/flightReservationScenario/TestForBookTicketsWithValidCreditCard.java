@@ -71,10 +71,10 @@ public class TestForBookTicketsWithValidCreditCard extends ModularTestScript {
 	
 	private void verifyBooking(FlightConfirmationPage flightConfirmationPage) {
 		if(flightConfirmationPage.isTicketBooked()) {
-			report.updateTestLog("Verify Booking", "Tickets booked successfully", Status.PASS);
+			report.updateTestLog("Verify Booking", "Tickets booked successfully", Status.PASS, true);
 			flightConfirmationPage.extractFlightConfirmationNumber();
 		} else {
-			report.updateTestLog("Verify Booking", "Tickets booking failed", Status.FAIL);
+			report.updateTestLog("Verify Booking", "Tickets booking failed", Status.FAIL, true);
 		}
 	}
 	

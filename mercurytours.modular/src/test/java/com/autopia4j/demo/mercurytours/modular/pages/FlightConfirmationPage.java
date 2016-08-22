@@ -46,8 +46,8 @@ public class FlightConfirmationPage extends MasterPage {
 		flightConfirmationNumber = flightConfirmationNumber.split("#")[1].trim();
 		dataTable.putData("Flights_Data", "FlightConfirmationNumber", flightConfirmationNumber);
 		report.updateTestLog("Flight Confirmation",
-						"The flight confirmation number is " + flightConfirmationNumber,
-						Status.DONE, true);
+								"The flight confirmation number is " + flightConfirmationNumber,
+								Status.DONE);
 		
 		return this;	// No need to instantiate a new object, since there is no actual page navigation involved here
 	}
