@@ -18,7 +18,7 @@
   	<dependency>
   		<groupId>com.autopia4j.framework</groupId>
   		<artifactId>autopia4j-webdriver</artifactId>
-  		<version>1.5.3</version>
+  		<version>1.5.4</version>
   		<scope>test</scope>
   	</dependency>
   	<dependency>
