@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.autopia4j.demo</groupId>
+  <artifactId>mercurytours.cucumber</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+
+  <name>autopia4j cucumber implementation demo</name>
+  <url>https://bitbucket.org/autopiateam/autopia4j-webdriver-demos</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+  	<dependency>
+  		<groupId>com.autopia4j.framework</groupId>
+  		<artifactId>autopia4j-webdriver</artifactId>
+  		<version>1.5.4</version>
+  		<scope>test</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>ch.qos.logback</groupId>
+  		<artifactId>logback-classic</artifactId>
+  		<version>1.1.7</version>
+  		<scope>test</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>info.cukes</groupId>
+  		<artifactId>cucumber-java</artifactId>
+  		<version>1.2.5</version>
+  		<scope>test</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>info.cukes</groupId>
+  		<artifactId>cucumber-junit</artifactId>
+  		<version>1.2.5</version>
+  		<scope>test</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>info.cukes</groupId>
+  		<artifactId>cucumber-testng</artifactId>
+  		<version>1.2.5</version>
+  		<scope>test</scope>
+  	</dependency>
+  </dependencies>
+  <description>autopia4j cucumber implementation demo</description>
+  <organization>
+  	<name>Autopia Team</name>
+  	<url>https://bitbucket.org/autopiateam</url>
+  </organization>
+  <issueManagement>
+  	<system>BitBucket</system>
+  	<url>https://bitbucket.org/autopiateam/autopia4j-webdriver-demos/issues?status=new&amp;status=open</url>
+  </issueManagement>
+</project>
