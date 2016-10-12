@@ -4,16 +4,10 @@ import org.openqa.selenium.By;
 
 import static org.testng.Assert.*;
 import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class LoginStepDefs extends MasterStepDefs {
-	
-	@Given("^I am in the login page of the application$")
-	public void i_am_in_login_page() {
-		driver.get(properties.getProperty("application.url"));
-	}
 	
 	@When("^I login using the invalid username (.*) and the invalid password (.*)$")
 	public void i_login_using_invalid_username_invalid_password(String userName, String password) {

@@ -4,7 +4,7 @@
 
   <groupId>com.autopia4j.demo</groupId>
   <artifactId>mercurytours.cucumber</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <packaging>jar</packaging>
 
   <name>autopia4j cucumber implementation demo</name>
