@@ -37,7 +37,7 @@ public class FlightFinderPage extends MasterPage {
 	public void VerifyPageTitle() {
 		currentScenario.embed(driverUtil.captureScreenshotAsByteArray(), "image/png");
 		
-		assertTrue(driver.getTitle().contains("Find a Flight"));
+		assertTrue(driver.getTitle().contains("Find a Flight"), "Find a Flight page displayed?");
 	}
 	
 	@Given("^I search for flights using the following criteria:$")

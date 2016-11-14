@@ -2,6 +2,8 @@ package com.autopia4j.demo.mercurytours.cucumber.cukeglue;
 
 import org.openqa.selenium.By;
 
+import com.autopia4j.framework.webdriver.impl.cucumber.MasterStepDefs;
+
 import static org.testng.Assert.*;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
@@ -49,6 +51,6 @@ public class LoginStepDefs extends MasterStepDefs {
 	public void application_should_login_navigate_to_FlightFinder_page() {
 		currentScenario.embed(driverUtil.captureScreenshotAsByteArray(), "image/png");
 		
-		assertTrue(driver.getTitle().contains("Find a Flight"));
+		assertTrue(driver.getTitle().contains("Find a Flight"), "Find a Flight page displayed?");
 	}
 }

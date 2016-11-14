@@ -4,7 +4,7 @@
 
   <groupId>com.autopia4j.demo</groupId>
   <artifactId>mercurytours.cucumber</artifactId>
-  <version>1.0.1</version>
+  <version>1.1.0</version>
   <packaging>jar</packaging>
 
   <name>autopia4j cucumber implementation demo</name>
@@ -18,19 +18,13 @@
   	<dependency>
   		<groupId>com.autopia4j.framework</groupId>
   		<artifactId>autopia4j-webdriver</artifactId>
-  		<version>1.5.5</version>
+  		<version>1.6.1</version>
   		<scope>test</scope>
   	</dependency>
   	<dependency>
   		<groupId>ch.qos.logback</groupId>
   		<artifactId>logback-classic</artifactId>
   		<version>1.1.7</version>
-  		<scope>test</scope>
-  	</dependency>
-  	<dependency>
-  		<groupId>info.cukes</groupId>
-  		<artifactId>cucumber-java</artifactId>
-  		<version>1.2.5</version>
   		<scope>test</scope>
   	</dependency>
   	<dependency>

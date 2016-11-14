@@ -4,6 +4,8 @@ import java.util.Map;
 
 import org.openqa.selenium.By;
 
+import com.autopia4j.framework.webdriver.impl.cucumber.MasterStepDefs;
+
 import static org.testng.Assert.*;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Then;
@@ -37,6 +39,6 @@ public class RegisterUserStepDefs extends MasterStepDefs {
 	public void i_should_get_registration_confirmation() {
 		currentScenario.embed(driverUtil.captureScreenshotAsByteArray(), "image/png");
 		
-		assertTrue(isTextPresent("^[\\s\\S]*Thank you for registering.[\\s\\S]*$"));
+		assertTrue(driverUtil.isTextPresent("^[\\s\\S]*Thank you for registering.[\\s\\S]*$"));
 	}
 }

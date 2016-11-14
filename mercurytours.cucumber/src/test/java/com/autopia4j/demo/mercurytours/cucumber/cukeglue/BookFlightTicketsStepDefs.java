@@ -6,6 +6,8 @@ import java.util.Map;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import com.autopia4j.framework.webdriver.impl.cucumber.MasterStepDefs;
+
 import static org.testng.Assert.*;
 
 import cucumber.api.DataTable;
@@ -77,7 +79,7 @@ public class BookFlightTicketsStepDefs extends MasterStepDefs {
 	public void i_should_get_booking_confirmation() {
 		currentScenario.embed(driverUtil.captureScreenshotAsByteArray(), "image/png");
 		
-		assertTrue(isTextPresent("^[\\s\\S]*Your itinerary has been booked![\\s\\S]*$"));
+		assertTrue(driverUtil.isTextPresent("^[\\s\\S]*Your itinerary has been booked![\\s\\S]*$"));
 		
 		WebElement flightConfirmation =
 				driver.findElement(By.cssSelector("font > font > b > font"));
