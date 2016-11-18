@@ -1,4 +1,4 @@
-package com.autopia4j.demo.mercurytours.simple.testconfigs;
+package com.autopia4j.demo.mercurytours.basic.testconfigs;
 
 import java.lang.reflect.Method;
 
