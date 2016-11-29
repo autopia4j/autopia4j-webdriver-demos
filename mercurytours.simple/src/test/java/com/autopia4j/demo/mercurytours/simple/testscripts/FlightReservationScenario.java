@@ -8,7 +8,7 @@ import com.autopia4j.demo.mercurytours.simple.pages.FlightConfirmationPage;
 import com.autopia4j.demo.mercurytours.simple.flows.GeneralFlows;
 import com.autopia4j.demo.mercurytours.simple.pages.FlightFinderPage;
 import com.autopia4j.demo.mercurytours.simple.pages.SignOnPage;
-import com.autopia4j.framework.reporting.Status;
+import com.autopia4j.framework.assertions.TestNgWrappedAssertion;
 import com.autopia4j.framework.webdriver.core.ScriptHelper;
 import com.autopia4j.framework.webdriver.impl.simple.SimpleTestScript;
 import com.autopia4j.framework.webdriver.reporting.WebDriverReport;
@@ -30,6 +30,7 @@ public class FlightReservationScenario extends SimpleTestScript {
 	public void testForBookTicketsWithValidCreditCard() {
 		ScriptHelper scriptHelper = currentScriptHelper.get();
 		WebDriverReport report = scriptHelper.getReport();
+		TestNgWrappedAssertion strongly = new TestNgWrappedAssertion(report);
 		report.addTestLogSection("Book flight tickets");
 		
 		FlightFinderPage flightFinderPage = new FlightFinderPage(scriptHelper);
@@ -37,18 +38,9 @@ public class FlightReservationScenario extends SimpleTestScript {
 																		.selectFlights()
 																		.bookFlights();
 		
-		verifyBooking(flightConfirmationPage, report);
+		strongly.assertTrue(flightConfirmationPage.isTicketBooked(), "Is ticket booked?");
+		flightConfirmationPage.extractFlightConfirmationNumber();
 		flightConfirmationPage.backToFlights();
-	}
-	
-	private void verifyBooking(FlightConfirmationPage flightConfirmationPage,
-														WebDriverReport report) {
-		if(flightConfirmationPage.isTicketBooked()) {
-			report.updateTestLog("Verify Booking", "Tickets booked successfully", Status.PASS, true);
-			flightConfirmationPage.extractFlightConfirmationNumber();
-		} else {
-			report.updateTestLog("Verify Booking", "Tickets booking failed", Status.FAIL, true);
-		}
 	}
 	
 	@AfterMethod

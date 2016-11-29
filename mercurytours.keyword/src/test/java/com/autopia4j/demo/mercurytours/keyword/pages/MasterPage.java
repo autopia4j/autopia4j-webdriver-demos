@@ -2,6 +2,7 @@ package com.autopia4j.demo.mercurytours.keyword.pages;
 
 import org.openqa.selenium.By;
 
+import com.autopia4j.framework.assertions.BlockingAssertion;
 import com.autopia4j.framework.reporting.Status;
 import com.autopia4j.framework.webdriver.core.ReusableLibrary;
 import com.autopia4j.framework.webdriver.core.ScriptHelper;
@@ -29,9 +30,19 @@ public class MasterPage extends ReusableLibrary {
 		driver.findElement(lnkRegister).click();
 	}
 	
-	public Boolean isUserSignedOn() {
+	public void verifyLoginSuccessful() {
+		BlockingAssertion strongly = new BlockingAssertion(report);
+		strongly.assertTrue(isUserSignedOn(), "Is user signed on?", true);
+	}
+	
+	private Boolean isUserSignedOn() {
 		return driverUtil.objectExists(lnkSignOff) &&
 				driver.findElement(lnkSignOff).isDisplayed();
+	}
+	
+	public void verifyLoginFailed() {
+		BlockingAssertion strongly = new BlockingAssertion(report);
+		strongly.assertFalse(isUserSignedOn(), "Is user signed on?");
 	}
 	
 	public void logout() {

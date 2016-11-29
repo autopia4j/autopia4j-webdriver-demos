@@ -1,8 +1,6 @@
 package com.autopia4j.demo.mercurytours.simple.flows;
 
-import com.autopia4j.demo.mercurytours.simple.pages.FlightFinderPage;
 import com.autopia4j.demo.mercurytours.simple.pages.SignOnPage;
-import com.autopia4j.framework.core.AutopiaException;
 import com.autopia4j.framework.reporting.Status;
 import com.autopia4j.framework.webdriver.core.ReusableLibrary;
 import com.autopia4j.framework.webdriver.core.ScriptHelper;
@@ -28,14 +26,5 @@ public class GeneralFlows extends ReusableLibrary {
 		driver.get(properties.getProperty("application.url"));
 		
 		return new SignOnPage(scriptHelper);
-	}
-	
-	public void verifyLoginSuccessful(FlightFinderPage flightFinderPage) {
-		if(flightFinderPage.isUserSignedOn()) {
-			report.updateTestLog("Verify Login", "Login succeeded for valid user", Status.PASS, true);
-		} else {
-			frameworkParameters.setStopExecution(true);
-			throw new AutopiaException("Verify Login", "Login failed for valid user");
-		}
 	}
 }

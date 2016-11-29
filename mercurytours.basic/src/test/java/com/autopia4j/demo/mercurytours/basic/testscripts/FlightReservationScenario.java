@@ -15,7 +15,7 @@ import com.autopia4j.demo.mercurytours.basic.datamodel.User;
 import com.autopia4j.demo.mercurytours.basic.flows.GeneralFlows;
 import com.autopia4j.demo.mercurytours.basic.pages.FlightFinderPage;
 import com.autopia4j.demo.mercurytours.basic.pages.SignOnPage;
-import com.autopia4j.framework.reporting.Status;
+import com.autopia4j.framework.assertions.TestNgWrappedAssertion;
 import com.autopia4j.framework.webdriver.core.ScriptHelper;
 import com.autopia4j.framework.webdriver.impl.basic.BasicTestScript;
 import com.autopia4j.framework.webdriver.reporting.WebDriverReport;
@@ -42,6 +42,7 @@ public class FlightReservationScenario extends BasicTestScript {
 	public void testForBookTicketsWithValidCreditCard() {
 		ScriptHelper scriptHelper = currentScriptHelper.get();
 		WebDriverReport report = scriptHelper.getReport();
+		TestNgWrappedAssertion strongly = new TestNgWrappedAssertion(report);
 		report.addTestLogSection("Book flight tickets");
 		
 		FlightFinderPage flightFinderPage = new FlightFinderPage(scriptHelper);
@@ -54,7 +55,8 @@ public class FlightReservationScenario extends BasicTestScript {
 																		.selectFlights()
 																		.bookFlights(passengers, creditCard);
 		
-		verifyBooking(flightConfirmationPage, report);
+		strongly.assertTrue(flightConfirmationPage.isTicketBooked(), "Is ticket booked?");
+		flightConfirmationPage.extractFlightConfirmationNumber();
 		flightConfirmationPage.backToFlights();
 	}
 	
@@ -84,16 +86,6 @@ public class FlightReservationScenario extends BasicTestScript {
 		creditCard.setCardType("Visa");
 		creditCard.setCardNumber("9876543210");
 		return creditCard;
-	}
-	
-	private void verifyBooking(FlightConfirmationPage flightConfirmationPage,
-														WebDriverReport report) {
-		if(flightConfirmationPage.isTicketBooked()) {
-			report.updateTestLog("Verify Booking", "Tickets booked successfully", Status.PASS, true);
-			flightConfirmationPage.extractFlightConfirmationNumber();
-		} else {
-			report.updateTestLog("Verify Booking", "Tickets booking failed", Status.FAIL, true);
-		}
 	}
 	
 	@AfterMethod

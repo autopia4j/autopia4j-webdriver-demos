@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import com.autopia4j.demo.mercurytours.modular.flows.GeneralFlows;
 import com.autopia4j.demo.mercurytours.modular.pages.FlightFinderPage;
 import com.autopia4j.demo.mercurytours.modular.pages.SignOnPage;
+import com.autopia4j.framework.assertions.BlockingAssertion;
 import com.autopia4j.framework.webdriver.core.WebDriverTestParameters;
 import com.autopia4j.framework.webdriver.impl.modular.ModularDriverScript;
 import com.autopia4j.framework.webdriver.impl.modular.ModularTestScript;
@@ -41,7 +42,10 @@ public class TestForValidLogin extends ModularTestScript {
 	@Override
 	public void executeTest() {
 		FlightFinderPage flightFinderPage = signOnPage.loginAsValidUser();
-		generalFlows.verifyLoginSuccessful(flightFinderPage);
+		BlockingAssertion strongly = new BlockingAssertion(report);
+		strongly.assertTrue(flightFinderPage.isUserSignedOn(), "Is user signed on?", true);
+		
+		//generalFlows.verifyLoginSuccessful(flightFinderPage);
 		signOnPage = flightFinderPage.logout();
 	}
 	

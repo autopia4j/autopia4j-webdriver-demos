@@ -3,6 +3,7 @@ package com.autopia4j.demo.mercurytours.keyword.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import com.autopia4j.framework.assertions.BlockingAssertion;
 import com.autopia4j.framework.reporting.Status;
 import com.autopia4j.framework.webdriver.core.ReusableLibrary;
 import com.autopia4j.framework.webdriver.core.ScriptHelper;
@@ -29,20 +30,17 @@ public class FlightConfirmationPage extends ReusableLibrary {
 	}
 	
 	public void verifyBooking() {
-		if(driverUtil.isTextPresent("^[\\s\\S]*Your itinerary has been booked![\\s\\S]*$")) {
-			report.updateTestLog("Verify Booking", "Tickets booked successfully", Status.PASS, true);
-			
-			WebElement flightConfirmation = driver.findElement(lblConfirmationMessage);
-			
-			String flightConfirmationNumber = flightConfirmation.getText();
-			flightConfirmationNumber = flightConfirmationNumber.split("#")[1].trim();
-			dataTable.putData("Flights_Data", "FlightConfirmationNumber", flightConfirmationNumber);
-			report.updateTestLog("Flight Confirmation",
-									"The flight confirmation number is " + flightConfirmationNumber,
-									Status.DONE);
-		} else {
-			report.updateTestLog("Verify Booking", "Tickets booking failed", Status.FAIL, true);
-		}
+		BlockingAssertion strongly = new BlockingAssertion(report);
+		Boolean isTicketBooked = driverUtil.isTextPresent("^[\\s\\S]*Your itinerary has been booked![\\s\\S]*$");
+		strongly.assertTrue(isTicketBooked, "Is ticket booked?");
+		
+		WebElement flightConfirmation = driver.findElement(lblConfirmationMessage);
+		String flightConfirmationNumber = flightConfirmation.getText();
+		flightConfirmationNumber = flightConfirmationNumber.split("#")[1].trim();
+		dataTable.putData("Flights_Data", "FlightConfirmationNumber", flightConfirmationNumber);
+		report.updateTestLog("Flight Confirmation",
+								"The flight confirmation number is " + flightConfirmationNumber,
+								Status.DONE);
 	}
 	
 	public void backToFlights() {

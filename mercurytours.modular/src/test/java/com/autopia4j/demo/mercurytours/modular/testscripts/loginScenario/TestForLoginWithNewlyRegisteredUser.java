@@ -7,8 +7,7 @@ import com.autopia4j.demo.mercurytours.modular.pages.FlightFinderPage;
 import com.autopia4j.demo.mercurytours.modular.pages.SignOnPage;
 import com.autopia4j.demo.mercurytours.modular.pages.UserRegistrationConfirmationPage;
 import com.autopia4j.demo.mercurytours.modular.pages.UserRegistrationPage;
-import com.autopia4j.framework.core.AutopiaException;
-import com.autopia4j.framework.reporting.Status;
+import com.autopia4j.framework.assertions.BlockingAssertion;
 import com.autopia4j.framework.webdriver.core.Browser;
 import com.autopia4j.framework.webdriver.core.WebDriverTestParameters;
 import com.autopia4j.framework.webdriver.impl.modular.ModularDriverScript;
@@ -20,7 +19,6 @@ import com.autopia4j.framework.webdriver.impl.modular.ModularTestScript;
  * @author vj
  */
 public class TestForLoginWithNewlyRegisteredUser extends ModularTestScript {
-	private GeneralFlows generalFlows;
 	private SignOnPage signOnPage;
 	
 	@Test
@@ -39,7 +37,7 @@ public class TestForLoginWithNewlyRegisteredUser extends ModularTestScript {
 	public void setUp() {
 		report.addTestLogSection("Setup");
 		
-		generalFlows = new GeneralFlows(scriptHelper);
+		GeneralFlows generalFlows = new GeneralFlows(scriptHelper);
 		signOnPage = generalFlows.invokeApplication();
 	}
 	
@@ -48,24 +46,13 @@ public class TestForLoginWithNewlyRegisteredUser extends ModularTestScript {
 		UserRegistrationPage userRegistrationPage = signOnPage.clickRegister();
 		UserRegistrationConfirmationPage userRegistrationConfirmationPage = 
 													userRegistrationPage.registerUser();
-		verifyRegistration(userRegistrationConfirmationPage);
+		BlockingAssertion strongly = new BlockingAssertion(report);
+		strongly.assertTrue(userRegistrationConfirmationPage.isUserRegistered(), "Is new user registered?");
 		signOnPage = userRegistrationConfirmationPage.clickSignIn();
 		
 		FlightFinderPage flightFinderPage = signOnPage.loginAsValidUser();
-		generalFlows.verifyLoginSuccessful(flightFinderPage);
+		strongly.assertTrue(flightFinderPage.isUserSignedOn(), "Is user signed on?");
 		signOnPage = flightFinderPage.logout();
-	}
-	
-	private void verifyRegistration(UserRegistrationConfirmationPage confirmationPage) {
-		String userName = dataTable.getData("General_Data", "Username");
-		
-		if(confirmationPage.isUserRegistered()) {
-			report.updateTestLog("Verify Registration",
-									"User " + userName + " registered successfully", Status.PASS, true);
-		} else {
-			throw new AutopiaException("Verify Registration",
-											"User " + userName + " registration failed");
-		}
 	}
 	
 	@Override

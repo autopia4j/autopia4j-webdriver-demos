@@ -6,8 +6,8 @@ import org.testng.annotations.Test;
 import com.autopia4j.demo.mercurytours.modular.flows.GeneralFlows;
 import com.autopia4j.demo.mercurytours.modular.pages.SignOnPage;
 import com.autopia4j.demo.mercurytours.modular.testscripts.TestConfigurations;
+import com.autopia4j.framework.assertions.BlockingAssertion;
 import com.autopia4j.framework.core.IterationOptions;
-import com.autopia4j.framework.reporting.Status;
 import com.autopia4j.framework.webdriver.core.Browser;
 import com.autopia4j.framework.webdriver.core.ExecutionMode;
 import com.autopia4j.framework.webdriver.core.WebDriverTestParameters;
@@ -53,13 +53,8 @@ public class TestForInvalidLogin extends ModularTestScript {
 	public void executeTest() {
 		signOnPage = signOnPage.loginAsInvalidUser();
 		
-		// Verify login failed for invalid user
-		if(!signOnPage.isUserSignedOn()) {
-			report.updateTestLog("Verify Login", "Login failed for invalid user", Status.PASS, true);
-		} else {
-			report.updateTestLog("Verify Login", "Login succeeded for invalid user", Status.FAIL, true);
-			signOnPage.logout();
-		}
+		BlockingAssertion strongly = new BlockingAssertion(report);
+		strongly.assertFalse(signOnPage.isUserSignedOn(), "Is user signed on?");
 	}
 	
 	@Override

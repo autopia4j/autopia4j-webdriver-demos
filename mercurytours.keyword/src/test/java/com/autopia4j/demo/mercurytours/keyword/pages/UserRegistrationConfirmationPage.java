@@ -2,7 +2,7 @@ package com.autopia4j.demo.mercurytours.keyword.pages;
 
 import org.openqa.selenium.By;
 
-import com.autopia4j.framework.core.AutopiaException;
+import com.autopia4j.framework.assertions.BlockingAssertion;
 import com.autopia4j.framework.reporting.Status;
 import com.autopia4j.framework.webdriver.core.ReusableLibrary;
 import com.autopia4j.framework.webdriver.core.ScriptHelper;
@@ -24,17 +24,11 @@ public class UserRegistrationConfirmationPage extends ReusableLibrary {
 	}
 	
 	public void verifyRegistration() {
-		String userName = dataTable.getData("General_Data", "Username");
-		
-		if(driverUtil.isTextPresent("^[\\s\\S]*Dear " +
-					dataTable.getExpectedResult("FirstName") + " " +
-					dataTable.getExpectedResult("LastName") + "[\\s\\S]*$")) {
-			report.updateTestLog("Verify Registration",
-										"User " + userName + " registered successfully", Status.PASS);
-		} else {
-			throw new AutopiaException("Verify Registration",
-											"User " + userName + " registration failed");
-		}
+		BlockingAssertion strongly = new BlockingAssertion(report);
+		Boolean isUserRegistered = driverUtil.isTextPresent("^[\\s\\S]*Dear " +
+									dataTable.getExpectedResult("FirstName") + " " +
+									dataTable.getExpectedResult("LastName") + "[\\s\\S]*$");
+		strongly.assertTrue(isUserRegistered, "Is new user registered?");
 	}
 	
 	public void clickSignIn() {

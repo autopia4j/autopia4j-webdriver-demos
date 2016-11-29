@@ -8,8 +8,8 @@ import com.autopia4j.demo.mercurytours.modular.pages.FlightConfirmationPage;
 import com.autopia4j.demo.mercurytours.modular.pages.FlightFinderPage;
 import com.autopia4j.demo.mercurytours.modular.pages.SignOnPage;
 import com.autopia4j.demo.mercurytours.modular.testscripts.TestConfigurations;
+import com.autopia4j.framework.assertions.BlockingAssertion;
 import com.autopia4j.framework.core.IterationOptions;
-import com.autopia4j.framework.reporting.Status;
 import com.autopia4j.framework.webdriver.core.Browser;
 import com.autopia4j.framework.webdriver.core.ExecutionMode;
 import com.autopia4j.framework.webdriver.core.WebDriverTestParameters;
@@ -65,17 +65,10 @@ public class TestForBookTicketsWithValidCreditCard extends ModularTestScript {
 																		.selectFlights()
 																		.bookFlights();
 		
-		verifyBooking(flightConfirmationPage);
+		BlockingAssertion strongly = new BlockingAssertion(report);
+		strongly.assertTrue(flightConfirmationPage.isTicketBooked(), "Is ticket booked?");
+		flightConfirmationPage.extractFlightConfirmationNumber();
 		flightFinderPage = flightConfirmationPage.backToFlights();
-	}
-	
-	private void verifyBooking(FlightConfirmationPage flightConfirmationPage) {
-		if(flightConfirmationPage.isTicketBooked()) {
-			report.updateTestLog("Verify Booking", "Tickets booked successfully", Status.PASS, true);
-			flightConfirmationPage.extractFlightConfirmationNumber();
-		} else {
-			report.updateTestLog("Verify Booking", "Tickets booking failed", Status.FAIL, true);
-		}
 	}
 	
 	@Override
