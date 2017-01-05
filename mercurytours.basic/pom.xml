@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.autopia4j.demo</groupId>
-  <artifactId>mercurytours.basic</artifactId>
-  <version>1.1.4</version>
+  <artifactId>mercurytours.pageObjectModel.basic</artifactId>
+  <version>1.1.5</version>
   <packaging>jar</packaging>
 
-  <name>autopia4j basic implementation demo</name>
+  <name>autopia4j basic page object model implementation demo</name>
   <url>https://bitbucket.org/autopiateam/autopia4j-webdriver-demos</url>
 
   <properties>
@@ -28,7 +28,6 @@
   		<scope>test</scope>
   	</dependency>
   </dependencies>
-  <description>autopia4j basic implementation demo</description>
   <organization>
   	<name>Autopia Team</name>
   	<url>https://bitbucket.org/autopiateam</url>
@@ -37,4 +36,5 @@
   	<system>BitBucket</system>
   	<url>https://bitbucket.org/autopiateam/autopia4j-webdriver-demos/issues?status=new&amp;status=open</url>
   </issueManagement>
+  <description>autopia4j implementation demo using the page object model (non data-driven)</description>
 </project>
