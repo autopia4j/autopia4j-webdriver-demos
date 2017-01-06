@@ -13,15 +13,15 @@ import com.autopia4j.framework.core.IterationOptions;
 import com.autopia4j.framework.webdriver.core.Browser;
 import com.autopia4j.framework.webdriver.core.ExecutionMode;
 import com.autopia4j.framework.webdriver.core.WebDriverTestParameters;
-import com.autopia4j.framework.webdriver.impl.modular.ModularDriverScript;
-import com.autopia4j.framework.webdriver.impl.modular.ModularTestScript;
+import com.autopia4j.framework.webdriver.impl.modular.dataIterative.ModularIterativeDriverScript;
+import com.autopia4j.framework.webdriver.impl.modular.dataIterative.ModularIterativeTestScript;
 
 
 /**
  * Test for book flight tickets and verify booking
  * @author vj
  */
-public class TestForBookTicketsWithValidCreditCard extends ModularTestScript {
+public class TestForBookTicketsWithValidCreditCard extends ModularIterativeTestScript {
 	private FlightFinderPage flightFinderPage;
 	
 	@Test(dataProvider="DesktopBrowsers", dataProviderClass=TestConfigurations.class)
@@ -38,7 +38,7 @@ public class TestForBookTicketsWithValidCreditCard extends ModularTestScript {
 		testParameters.setBrowser(browser);
 		testParameters.setPlatform(platform);
 		
-		ModularDriverScript driverScript = new ModularDriverScript(testParameters);
+		ModularIterativeDriverScript driverScript = new ModularIterativeDriverScript(testParameters);
 		driverScript.driveTestExecution();
 		assertTestPassed(driverScript);
 	}

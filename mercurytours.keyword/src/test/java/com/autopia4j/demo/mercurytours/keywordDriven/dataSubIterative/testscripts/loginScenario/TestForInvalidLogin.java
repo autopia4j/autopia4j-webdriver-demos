@@ -1,22 +1,22 @@
-package com.autopia4j.demo.mercurytours.keywordDriven.dataIterative.testscripts.loginScenario;
+package com.autopia4j.demo.mercurytours.keywordDriven.dataSubIterative.testscripts.loginScenario;
 
 import org.openqa.selenium.Platform;
 import org.testng.annotations.Test;
 
-import com.autopia4j.demo.mercurytours.keywordDriven.dataIterative.testscripts.TestConfigurations;
+import com.autopia4j.demo.mercurytours.keywordDriven.dataSubIterative.testscripts.TestConfigurations;
 import com.autopia4j.framework.core.IterationOptions;
 import com.autopia4j.framework.webdriver.core.Browser;
 import com.autopia4j.framework.webdriver.core.ExecutionMode;
 import com.autopia4j.framework.webdriver.core.WebDriverTestParameters;
-import com.autopia4j.framework.webdriver.impl.keyword.KeywordDriverScript;
-import com.autopia4j.framework.webdriver.impl.keyword.KeywordTestScript;
+import com.autopia4j.framework.webdriver.impl.keywordDriven.dataSubIterative.KeywordSubIterativeDriverScript;
+import com.autopia4j.framework.webdriver.impl.keywordDriven.dataSubIterative.KeywordSubIterativeTestScript;
 
 
 /**
  * Test for login with invalid user credentials
  * @author vj
  */
-public class TestForInvalidLogin extends KeywordTestScript {
+public class TestForInvalidLogin extends KeywordSubIterativeTestScript {
 	
 	@Test(dataProvider="DesktopBrowsers", dataProviderClass=TestConfigurations.class)
 	public void testRunner(String testInstance, ExecutionMode executionMode,
@@ -32,7 +32,7 @@ public class TestForInvalidLogin extends KeywordTestScript {
 		testParameters.setBrowser(browser);
 		testParameters.setPlatform(platform);
 		
-		KeywordDriverScript driverScript = new KeywordDriverScript(testParameters);
+		KeywordSubIterativeDriverScript driverScript = new KeywordSubIterativeDriverScript(testParameters);
 		driverScript.driveTestExecution();
 		assertTestPassed(driverScript);
 	}

@@ -21,7 +21,7 @@ abstract class MasterPage extends ReusableLibrary {
 	
 	/**
 	 * Constructor to initialize the functional library
-	 * @param scriptHelper The {@link ScriptHelper} object passed from the {@link ModularDriverScript}
+	 * @param scriptHelper The {@link ScriptHelper} object passed from the {@link ModularIterativeDriverScript}
 	 */
 	protected MasterPage(ScriptHelper scriptHelper) {
 		super(scriptHelper);

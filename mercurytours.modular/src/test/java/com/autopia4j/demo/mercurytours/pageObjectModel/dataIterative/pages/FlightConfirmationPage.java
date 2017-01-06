@@ -25,7 +25,7 @@ public class FlightConfirmationPage extends MasterPage {
 	
 	/**
 	 * Constructor to initialize the component library
-	 * @param scriptHelper The {@link ScriptHelper} object passed from the {@link ModularDriverScript}
+	 * @param scriptHelper The {@link ScriptHelper} object passed from the {@link ModularIterativeDriverScript}
 	 */
 	public FlightConfirmationPage(ScriptHelper scriptHelper) {
 		super(scriptHelper);

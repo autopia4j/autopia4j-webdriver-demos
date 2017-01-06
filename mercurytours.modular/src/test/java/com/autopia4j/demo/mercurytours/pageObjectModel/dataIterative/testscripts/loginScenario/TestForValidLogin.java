@@ -7,15 +7,15 @@ import com.autopia4j.demo.mercurytours.pageObjectModel.dataIterative.pages.Fligh
 import com.autopia4j.demo.mercurytours.pageObjectModel.dataIterative.pages.SignOnPage;
 import com.autopia4j.framework.assertions.BlockingAssertion;
 import com.autopia4j.framework.webdriver.core.WebDriverTestParameters;
-import com.autopia4j.framework.webdriver.impl.modular.ModularDriverScript;
-import com.autopia4j.framework.webdriver.impl.modular.ModularTestScript;
+import com.autopia4j.framework.webdriver.impl.modular.dataIterative.ModularIterativeDriverScript;
+import com.autopia4j.framework.webdriver.impl.modular.dataIterative.ModularIterativeTestScript;
 
 
 /**
  * Test for login with valid user credentials
  * @author vj
  */
-public class TestForValidLogin extends ModularTestScript {
+public class TestForValidLogin extends ModularIterativeTestScript {
 	
 	private GeneralFlows generalFlows;
 	private SignOnPage signOnPage;
@@ -26,7 +26,7 @@ public class TestForValidLogin extends ModularTestScript {
 									new WebDriverTestParameters(currentModule, currentTest);
 		testParameters.setCurrentTestDescription("Test for login with valid user credentials");
 		
-		ModularDriverScript driverScript = new ModularDriverScript(testParameters);
+		ModularIterativeDriverScript driverScript = new ModularIterativeDriverScript(testParameters);
 		driverScript.driveTestExecution();
 		assertTestPassed(driverScript);
 	}

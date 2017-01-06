@@ -12,10 +12,10 @@ import com.autopia4j.demo.mercurytours.pageObjectModel.dataNonIterative.testconf
 import com.autopia4j.framework.assertions.TestNgWrappedAssertion;
 import com.autopia4j.framework.webdriver.core.ScriptHelper;
 import com.autopia4j.framework.webdriver.core.WebDriverTestParameters;
-import com.autopia4j.framework.webdriver.impl.simple.SimpleTestScript;
+import com.autopia4j.framework.webdriver.impl.modular.dataNonIterative.ModularNonIterativeTestScript;
 import com.autopia4j.framework.webdriver.reporting.WebDriverReport;
 
-public class LoginScenario extends SimpleTestScript {
+public class LoginScenario extends ModularNonIterativeTestScript {
 	
 	// Avoid class level fields -> they get shared across test methods that run in parallel
 	// If you must use them, make sure they are implemented as ThreadLocal variables

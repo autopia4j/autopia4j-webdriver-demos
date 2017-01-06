@@ -13,7 +13,7 @@ import com.autopia4j.framework.webdriver.core.ScriptHelper;
 public class GeneralFlows extends ReusableLibrary {
 	/**
 	 * Constructor to initialize the functional library
-	 * @param scriptHelper The {@link ScriptHelper} object passed from the {@link ModularDriverScript}
+	 * @param scriptHelper The {@link ScriptHelper} object passed from the {@link ModularIterativeDriverScript}
 	 */
 	public GeneralFlows(ScriptHelper scriptHelper) {
 		super(scriptHelper);

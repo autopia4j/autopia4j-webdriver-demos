@@ -18,7 +18,7 @@ public class BatchRunner {
 	 */
 	public static void main(String[] args) throws InterruptedException {
 		FrameworkParameters frameworkParameters = FrameworkParameters.getInstance();
-		frameworkParameters.setFrameworkType(FrameworkType.MODULAR);
+		frameworkParameters.setFrameworkType(FrameworkType.MODULAR_ITERATIVE);
 		frameworkParameters.setBasePackageName(BatchRunner.class.getPackage().getName());
 		
 		Allocator allocator = new Allocator();

@@ -1,4 +1,4 @@
-package com.autopia4j.demo.mercurytours.keywordDriven.dataIterative;
+package com.autopia4j.demo.mercurytours.keywordDriven.dataSubIterative;
 
 import com.autopia4j.framework.core.FrameworkParameters;
 import com.autopia4j.framework.core.FrameworkType;
@@ -18,7 +18,7 @@ public class BatchRunner {
 	 */
 	public static void main(String[] args) throws InterruptedException {
 		FrameworkParameters frameworkParameters = FrameworkParameters.getInstance();
-		frameworkParameters.setFrameworkType(FrameworkType.KEYWORD_DRIVEN);
+		frameworkParameters.setFrameworkType(FrameworkType.KEYWORD_SUBITERATIVE);
 		frameworkParameters.setBasePackageName(BatchRunner.class.getPackage().getName());
 		
 		Allocator allocator = new Allocator();

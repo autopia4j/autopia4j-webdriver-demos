@@ -11,15 +11,15 @@ import com.autopia4j.framework.core.IterationOptions;
 import com.autopia4j.framework.webdriver.core.Browser;
 import com.autopia4j.framework.webdriver.core.ExecutionMode;
 import com.autopia4j.framework.webdriver.core.WebDriverTestParameters;
-import com.autopia4j.framework.webdriver.impl.modular.ModularDriverScript;
-import com.autopia4j.framework.webdriver.impl.modular.ModularTestScript;
+import com.autopia4j.framework.webdriver.impl.modular.dataIterative.ModularIterativeDriverScript;
+import com.autopia4j.framework.webdriver.impl.modular.dataIterative.ModularIterativeTestScript;
 
 
 /**
  * Test for login with invalid user credentials
  * @author vj
  */
-public class TestForInvalidLogin extends ModularTestScript {
+public class TestForInvalidLogin extends ModularIterativeTestScript {
 	private SignOnPage signOnPage;
 	
 	@Test(dataProvider="DesktopBrowsers", dataProviderClass=TestConfigurations.class)
@@ -36,7 +36,7 @@ public class TestForInvalidLogin extends ModularTestScript {
 		testParameters.setBrowser(browser);
 		testParameters.setPlatform(platform);
 		
-		ModularDriverScript driverScript = new ModularDriverScript(testParameters);
+		ModularIterativeDriverScript driverScript = new ModularIterativeDriverScript(testParameters);
 		driverScript.driveTestExecution();
 		assertTestPassed(driverScript);
 	}

@@ -1,9 +1,9 @@
-package com.autopia4j.demo.mercurytours.keywordDriven.dataIterative.flows;
+package com.autopia4j.demo.mercurytours.keywordDriven.dataSubIterative.flows;
 
-import com.autopia4j.demo.mercurytours.keywordDriven.dataIterative.pages.BookFlightPage;
-import com.autopia4j.demo.mercurytours.keywordDriven.dataIterative.pages.FlightConfirmationPage;
-import com.autopia4j.demo.mercurytours.keywordDriven.dataIterative.pages.FlightFinderPage;
-import com.autopia4j.demo.mercurytours.keywordDriven.dataIterative.pages.SelectFlightPage;
+import com.autopia4j.demo.mercurytours.keywordDriven.dataSubIterative.pages.BookFlightPage;
+import com.autopia4j.demo.mercurytours.keywordDriven.dataSubIterative.pages.FlightConfirmationPage;
+import com.autopia4j.demo.mercurytours.keywordDriven.dataSubIterative.pages.FlightFinderPage;
+import com.autopia4j.demo.mercurytours.keywordDriven.dataSubIterative.pages.SelectFlightPage;
 import com.autopia4j.framework.webdriver.core.ReusableLibrary;
 import com.autopia4j.framework.webdriver.core.ScriptHelper;
 

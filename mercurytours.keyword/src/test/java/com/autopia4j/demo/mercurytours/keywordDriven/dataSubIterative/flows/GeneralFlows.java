@@ -1,4 +1,4 @@
-package com.autopia4j.demo.mercurytours.keywordDriven.dataIterative.flows;
+package com.autopia4j.demo.mercurytours.keywordDriven.dataSubIterative.flows;
 
 import com.autopia4j.framework.reporting.Status;
 import com.autopia4j.framework.webdriver.core.ReusableLibrary;

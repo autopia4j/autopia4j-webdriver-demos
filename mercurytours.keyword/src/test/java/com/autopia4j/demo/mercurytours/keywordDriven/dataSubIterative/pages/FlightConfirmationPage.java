@@ -1,4 +1,4 @@
-package com.autopia4j.demo.mercurytours.keywordDriven.dataIterative.pages;
+package com.autopia4j.demo.mercurytours.keywordDriven.dataSubIterative.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

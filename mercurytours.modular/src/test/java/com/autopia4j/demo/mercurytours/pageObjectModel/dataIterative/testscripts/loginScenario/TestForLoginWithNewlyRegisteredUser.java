@@ -10,15 +10,15 @@ import com.autopia4j.demo.mercurytours.pageObjectModel.dataIterative.pages.UserR
 import com.autopia4j.framework.assertions.BlockingAssertion;
 import com.autopia4j.framework.webdriver.core.Browser;
 import com.autopia4j.framework.webdriver.core.WebDriverTestParameters;
-import com.autopia4j.framework.webdriver.impl.modular.ModularDriverScript;
-import com.autopia4j.framework.webdriver.impl.modular.ModularTestScript;
+import com.autopia4j.framework.webdriver.impl.modular.dataIterative.ModularIterativeDriverScript;
+import com.autopia4j.framework.webdriver.impl.modular.dataIterative.ModularIterativeTestScript;
 
 
 /**
  * Test for login with newly registered user
  * @author vj
  */
-public class TestForLoginWithNewlyRegisteredUser extends ModularTestScript {
+public class TestForLoginWithNewlyRegisteredUser extends ModularIterativeTestScript {
 	private SignOnPage signOnPage;
 	
 	@Test
@@ -28,7 +28,7 @@ public class TestForLoginWithNewlyRegisteredUser extends ModularTestScript {
 		testParameters.setCurrentTestDescription("Test for login with newly registered user");
 		testParameters.setBrowser(Browser.CHROME);
 		
-		ModularDriverScript driverScript = new ModularDriverScript(testParameters);
+		ModularIterativeDriverScript driverScript = new ModularIterativeDriverScript(testParameters);
 		driverScript.driveTestExecution();
 		assertTestPassed(driverScript);
 	}

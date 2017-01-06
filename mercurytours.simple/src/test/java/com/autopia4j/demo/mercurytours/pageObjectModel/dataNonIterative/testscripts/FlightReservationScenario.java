@@ -10,10 +10,10 @@ import com.autopia4j.demo.mercurytours.pageObjectModel.dataNonIterative.pages.Fl
 import com.autopia4j.demo.mercurytours.pageObjectModel.dataNonIterative.pages.SignOnPage;
 import com.autopia4j.framework.assertions.TestNgWrappedAssertion;
 import com.autopia4j.framework.webdriver.core.ScriptHelper;
-import com.autopia4j.framework.webdriver.impl.simple.SimpleTestScript;
+import com.autopia4j.framework.webdriver.impl.modular.dataNonIterative.ModularNonIterativeTestScript;
 import com.autopia4j.framework.webdriver.reporting.WebDriverReport;
 
-public class FlightReservationScenario extends SimpleTestScript {
+public class FlightReservationScenario extends ModularNonIterativeTestScript {
 	
 	@BeforeMethod
 	public void setUp() {

@@ -13,9 +13,9 @@ import com.autopia4j.demo.mercurytours.pageObjectModel.basic.testconfigs.TestCon
 import com.autopia4j.framework.assertions.TestNgWrappedAssertion;
 import com.autopia4j.framework.webdriver.core.ScriptHelper;
 import com.autopia4j.framework.webdriver.core.WebDriverTestParameters;
-import com.autopia4j.framework.webdriver.impl.basic.BasicTestScript;
+import com.autopia4j.framework.webdriver.impl.modular.basic.ModularBasicTestScript;
 
-public class LoginScenario extends BasicTestScript {
+public class LoginScenario extends ModularBasicTestScript {
 	
 	// Avoid class level fields -> they get shared across test methods that run in parallel
 	// If you must use them, make sure they are implemented as ThreadLocal variables

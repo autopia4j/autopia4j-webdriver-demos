@@ -17,10 +17,10 @@ import com.autopia4j.demo.mercurytours.pageObjectModel.basic.pages.FlightFinderP
 import com.autopia4j.demo.mercurytours.pageObjectModel.basic.pages.SignOnPage;
 import com.autopia4j.framework.assertions.TestNgWrappedAssertion;
 import com.autopia4j.framework.webdriver.core.ScriptHelper;
-import com.autopia4j.framework.webdriver.impl.basic.BasicTestScript;
+import com.autopia4j.framework.webdriver.impl.modular.basic.ModularBasicTestScript;
 import com.autopia4j.framework.webdriver.reporting.WebDriverReport;
 
-public class FlightReservationScenario extends BasicTestScript {
+public class FlightReservationScenario extends ModularBasicTestScript {
 	
 	@BeforeMethod
 	public void setUp() {

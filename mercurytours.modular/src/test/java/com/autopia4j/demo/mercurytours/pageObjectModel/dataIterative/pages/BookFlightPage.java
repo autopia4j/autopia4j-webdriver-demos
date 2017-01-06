@@ -29,7 +29,7 @@ public class BookFlightPage extends MasterPage {
 	
 	/**
 	 * Constructor to initialize the page
-	 * @param scriptHelper The {@link ScriptHelper} object passed from the {@link ModularDriverScript}
+	 * @param scriptHelper The {@link ScriptHelper} object passed from the {@link ModularIterativeDriverScript}
 	 */
 	public BookFlightPage(ScriptHelper scriptHelper) {
 		super(scriptHelper);

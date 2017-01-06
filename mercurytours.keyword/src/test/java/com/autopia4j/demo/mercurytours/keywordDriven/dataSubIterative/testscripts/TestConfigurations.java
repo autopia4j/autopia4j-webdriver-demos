@@ -1,4 +1,4 @@
-package com.autopia4j.demo.mercurytours.keywordDriven.dataIterative.testscripts;
+package com.autopia4j.demo.mercurytours.keywordDriven.dataSubIterative.testscripts;
 
 import org.openqa.selenium.Platform;
 import org.testng.annotations.DataProvider;

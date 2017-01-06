@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.autopia4j.demo</groupId>
-  <artifactId>mercurytours.keywordDriven.dataIterative</artifactId>
-  <version>1.1.5</version>
+  <artifactId>mercurytours.keywordDriven.dataSubIterative</artifactId>
+  <version>1.1.6</version>
   <packaging>jar</packaging>
 
-  <name>autopia4j keyword driven and data iterative implementation demo</name>
+  <name>autopia4j keyword driven and data sub-iterative implementation demo</name>
   <url>https://bitbucket.org/autopiateam/autopia4j-webdriver-demos</url>
 
   <properties>
@@ -18,7 +18,7 @@
   	<dependency>
   		<groupId>com.autopia4j.framework</groupId>
   		<artifactId>autopia4j-webdriver</artifactId>
-  		<version>1.7.4</version>
+  		<version>1.7.5</version>
   		<scope>test</scope>
   	</dependency>
   	<dependency>
@@ -36,5 +36,5 @@
   	<url>https://bitbucket.org/autopiateam/autopia4j-webdriver-demos/issues?status=new&amp;status=open</url>
   	<system>BitBucket</system>
   </issueManagement>
-  <description>autopia4j implementation demo using the keyword driven approach and an iterative datatable</description>
+  <description>autopia4j implementation demo using the keyword driven approach and an sub-iterative datatable</description>
 </project>

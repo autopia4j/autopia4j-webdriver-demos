@@ -1,4 +1,4 @@
-package com.autopia4j.demo.mercurytours.pageObjectModel.dataNonIterative;
+package com.autopia4j.demo.mercurytours.keywordDriven.dataSubIterative;
 
 /**
  * Hello world!
