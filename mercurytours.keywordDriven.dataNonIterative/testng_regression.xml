@@ -3,8 +3,8 @@
 <suite name="Regression" parallel="methods" thread-count="2" data-provider-thread-count="3">
   <test name="Test">
     <packages>
-      <package name="com.autopia4j.demo.mercurytours.keywordDriven.dataSubIterative.testscripts.loginScenario"/>
-      <package name="com.autopia4j.demo.mercurytours.keywordDriven.dataSubIterative.testscripts.flightReservationScenario"/>
+      <package name="com.autopia4j.demo.mercurytours.keywordDriven.dataNonIterative.testscripts.loginScenario"/>
+      <package name="com.autopia4j.demo.mercurytours.keywordDriven.dataNonIterative.testscripts.flightReservationScenario"/>
     </packages>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
