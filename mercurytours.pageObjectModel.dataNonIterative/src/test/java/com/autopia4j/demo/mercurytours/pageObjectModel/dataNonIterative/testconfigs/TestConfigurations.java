@@ -18,7 +18,7 @@ public class TestConfigurations {
 		
 		return new Object[][] { 
 			{ new WebDriverTestParamsBuilder(currentModule, currentTest).testInstance("Instance1").browser(Browser.CHROME).build() },
-			{ new WebDriverTestParamsBuilder(currentModule, currentTest).testInstance("Instance2").browser(Browser.FIREFOX_MARIONETTE).build() }
+			{ new WebDriverTestParamsBuilder(currentModule, currentTest).testInstance("Instance2").browser(Browser.FIREFOX).build() }
 		};
 	}
 	
@@ -30,7 +30,7 @@ public class TestConfigurations {
 		
 		return new Object[][] { 
 			{ new WebDriverTestParamsBuilder(currentModule, currentTest).testInstance("Instance1").browser(Browser.CHROME).build() },
-			{ new WebDriverTestParamsBuilder(currentModule, currentTest).testInstance("Instance2").browser(Browser.FIREFOX_MARIONETTE).build() },
+			{ new WebDriverTestParamsBuilder(currentModule, currentTest).testInstance("Instance2").browser(Browser.FIREFOX).build() },
 			{ new WebDriverTestParamsBuilder(currentModule, currentTest).testInstance("Instance3").executionMode(ExecutionMode.APPIUM_DEVICE).deviceName("Samsung Note 7").browser(Browser.APPIUM_CHROME).build() },
 			{ new WebDriverTestParamsBuilder(currentModule, currentTest).testInstance("Instance4").executionMode(ExecutionMode.PERFECTO_DEVICE).deviceName("Apple iPad 4").browser(Browser.PERFECTO_MOBILE_SAFARI).build() }
 		};

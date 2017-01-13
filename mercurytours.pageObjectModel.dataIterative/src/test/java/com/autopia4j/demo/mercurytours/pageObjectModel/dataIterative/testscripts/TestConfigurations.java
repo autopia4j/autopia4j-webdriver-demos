@@ -12,7 +12,7 @@ public class TestConfigurations {
 	public static Object[][] allBrowsers() {
 		return new Object[][] {
 			{ "Instance1", ExecutionMode.LOCAL, "N/A", Browser.CHROME, Platform.WINDOWS },
-			{ "Instance2", ExecutionMode.LOCAL, "N/A", Browser.FIREFOX_MARIONETTE, Platform.WINDOWS },
+			{ "Instance2", ExecutionMode.LOCAL, "N/A", Browser.FIREFOX, Platform.WINDOWS },
 			{ "Instance3", ExecutionMode.PERFECTO_DEVICE, "Apple_iPhone_6", Browser.PERFECTO_MOBILE_OS, Platform.ANY },
 			{ "Instance4", ExecutionMode.PERFECTO_DEVICE, "Apple_iPad_4", Browser.PERFECTO_MOBILE_SAFARI, Platform.ANY },
 			{ "Instance5", ExecutionMode.PERFECTO_DEVICE, "Samsung_Galaxy_S5", Browser.PERFECTO_MOBILE, Platform.ANDROID },
@@ -24,7 +24,7 @@ public class TestConfigurations {
 	public static Object[][] desktopBrowsers() {
 		return new Object[][] {
 			{ "Instance1", ExecutionMode.LOCAL, "N/A", Browser.CHROME, Platform.WINDOWS },
-			{ "Instance2", ExecutionMode.LOCAL, "N/A", Browser.FIREFOX_MARIONETTE, Platform.WINDOWS },
+			{ "Instance2", ExecutionMode.LOCAL, "N/A", Browser.FIREFOX, Platform.WINDOWS },
 		};
 	}
 	
