@@ -1,3 +1,3 @@
 autopia4j is an open source automation framework, designed to work with any Java based automation tool. The most prominent implementation of the framework is on top of Selenium WebDriver. A SoapUI implementation is also available.
 
-The autopia4j-webdriver-demos project contains demo projects containing automated scripts developed using the autopia4j framework over Selenium WebDriver. Note that this project depends on the autopia4j-webdriver library, which in turn depends on the autopia4j-core library.
+The autopia4j-webdriver-demos repo contains demo projects for various implementations of the autopia4j framework over Selenium WebDriver. Note that all projects in this repo depend upon the autopia4j-webdriver library, which in turn depends upon the autopia4j-core library.
