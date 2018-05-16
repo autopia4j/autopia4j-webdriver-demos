@@ -15,7 +15,7 @@ Scenario: Find and book flight tickets
 	And I select the first available flight
 	And I book the tickets using the following passenger details:
 		|FirstName	|LastName		|
-		|iCIMS			|Labs				|
+		|Autopia			|Labs				|
 		|QA					|Automation	|
 	And I use the following credit card details:
 		|CreditCardType	|CreditCardNumber	|

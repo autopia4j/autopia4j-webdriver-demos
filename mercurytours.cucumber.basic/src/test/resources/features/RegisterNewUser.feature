@@ -6,17 +6,17 @@ Feature: Register new user
 Scenario: Register new user and login using the newly registered credentials
 	Given I am in the login page of the application
 	When I register a new user with the following details:
-		|	Username		|	icims							|
+		|	Username		|	autopia							|
 		|	Password		|	password-1				|
 		|	FirstName		|	vj								|
 		|	LastName		|	rams							|
 		|	Phone				|	1234567890				|
-		|	Email				|	reachus@icims.com	|
-		|	Address			|	90 Matawan Road		|
-		|	City				|	Matawan						|
+		|	Email				|	reachus@autopia.com	|
+		|	Address			|	90 May Street		|
+		|	City				|	Woodbridge						|
 		|	State				|	New Jersey				|
-		|	PostalCode	|	07747							|
+		|	PostalCode	|	07095							|
 	Then I should get a confirmation on successful registration
 	When I click on the sign in link
-	And I login using the valid username icims and the valid password password-1
+	And I login using the valid username autopia and the valid password password-1
 	Then The application should log me in and navigate to the Flight Finder page
